@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALo Candles - Modern Luxury Candles</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #f8f5f2;
+            --secondary: #232323;
+            --accent: #e8c8a9;
+            --light-accent: #f5efe9;
+            --font-main: 'Poppins', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--primary);
+            color: var(--secondary);
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        /* Header and Navigation */
+        header {
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            top: 0;
+            left: 0;
+            background-color: rgba(248, 245, 242, 0.95);
+        }
+        
+        header.scrolled {
+            background-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-image {
+            height: 40px;
+            width: auto;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary);
+            position: relative;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .mobile-menu div {
+            width: 25px;
+            height: 2px;
+            background-color: var(--secondary);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 0 5%;
+            background-color: var(--light-accent);
+            overflow: hidden;
+            margin-top: 80px; /* Added to fix navbar alignment */
+        }
+        
+        .hero-content {
+            width: 50%;
+            z-index: 1;
+            padding-right: 2rem;
+        }
+        
+        .hero-image {
+            position: relative;
+            width: 45%;
+            height: 70%;
+            margin-left: 5%;
+            overflow: hidden;
+            z-index: 0;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-image div {
+            background-color: var(--accent);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            width: 70%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 5%;
+        }
+        
+        section:nth-child(even) {
+            background-color: var(--light-accent);
+        }
+        
+        /* About Section - Fixed to match hero section */
+        .about {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 0 5%;
+            background-color: var(--primary);
+            overflow: hidden;
+        }
+        
+        .about-content {
+            width: 50%;
+            z-index: 1;
+            padding-right: 2rem;
+        }
+        
+        .about-image {
+            position: relative;
+            width: 45%;
+            height: 70%;
+            margin-left: 5%;
+            overflow: hidden;
+            z-index: 0;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Founder Section */
+        .founder {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary);
+            padding: 100px 5%;
+        }
+        
+        .founder-image {
+            width: 40%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .founder-content {
+            width: 55%;
+            padding-left: 5%;
+        }
+        
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        
+        .social-link {
+            margin-top: 2rem;
+        }
+        
+        .insta-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .insta-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .insta-btn:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        /* Instagram Reel Section */
+        .instagram-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 5%;
+            background-color: var(--light-accent);
+        }
+        
+        .instagram-content {
+            width: 45%;
+        }
+        
+        .instagram-reel {
+            width: 50%;
+        }
+        
+        .reel-preview {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        
+        .reel-preview img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .reel-preview:hover img {
+            transform: scale(1.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button i {
+            font-size: 30px;
+            color: var(--accent);
+        }
+        
+        .reel-preview:hover .play-button {
+            background-color: var(--accent);
+        }
+        
+        .reel-preview:hover .play-button i {
+            color: var(--primary);
+        }
+        
+        .insta-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: 500;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .insta-link i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .insta-link:hover {
+            color: var(--accent);
+        }
+        
+        /* Products Section */
+        .products {
+            text-align: center;
+        }
+        
+        .products h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+        
+        .product-card {
+            background-color: var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 300px;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 70%;
+            max-height: 70%;
+        }
+        
+        .product-info {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .product-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .add-to-cart {
+            background-color: transparent;
+            border: 1px solid var(--secondary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            text-align: center;
+        }
+        
+        .testimonials h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .testimonial-slider {
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .testimonial-slide.active {
+            opacity: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 500;
+        }
+        
+        .slider-nav {
+            margin-top: 1rem;
+        }
+        
+        .slider-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent);
+            opacity: 0.5;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            opacity: 1;
+        }
+        
+        /* Contact */
+        .contact {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            width: 45%;
+        }
+        
+        .contact-form {
+            width: 45%;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--primary);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 5px;
+            font-family: var(--font-main);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 50px 5% 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column {
+            width: 30%;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links li a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links li a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .social-links li {
+            margin-right: 1rem;
+        }
+        
+        .social-links li a {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links li a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-content, .about-content {
+                width: 45%;
+            }
+            
+            .hero-image, .about-image {
+                width: 50%;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 5%;
+            }
+            
+            nav ul {
+                position: absolute;
+                right: 0;
+                top: 80px;
+                background-color: var(--primary);
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                transform: translateY(-150%);
+                transition: transform 0.5s ease;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 1.5rem 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero, .about {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+                padding-top: 100px;
+                padding-bottom: 50px;
+            }
+            
+            .hero-content, .hero-image, .about-content, .about-image {
+                width: 100%;
+                position: static;
+            }
+            
+            .hero-content, .about-content {
+                margin-bottom: 3rem;
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .hero-image, .about-image {
+                height: 350px;
+            }
+            
+            .contact, .founder, .instagram-section {
+                flex-direction: column;
+            }
+            
+            .contact-info, .contact-form,
+            .founder-image, .founder-content,
+            .instagram-content, .instagram-reel {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            
+            .founder-content {
+                padding-left: 0;
+                margin-top: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-column {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="ALo Logo" class="logo-image">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Illuminating <br> Your Space</h1>
+            <p>Handcrafted luxury candles with natural ingredients and elegant designs. Transform your home into a sanctuary with our carefully curated collection of traditional and contemporary scents.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+        <div class="hero-image">
+            <div>
+                <img src="images/logo.jpg" alt="ALo Signature Candle">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - Fixed to match hero section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>ALo was born from a passion for creating moments of tranquility in our busy urban lives. Each candle is handcrafted with care in Kolkata, using only the finest natural ingredients and essential oils inspired by India's rich aromatic heritage.</p>
+            <p>Our mission is to bring warmth, comfort, and a touch of luxury to your everyday life at affordable prices. We believe in sustainable practices and eco-friendly materials, ensuring our products are as kind to the earth as they are to your senses.</p>
+            <a href="#products" class="btn">Discover Our Collection</a>
+        </div>
+        <div class="about-image">
+            <img src="images/placeholder.jpg" alt="ALo Candle Making Process">
+        </div>
+    </section>
+    
+    <!-- Founder Section -->
+    <section class="founder" id="founder">
+        <div class="founder-image">
+            <img src="images/founder.jpg" alt="ALo Founder - Sreya Mondal">
+        </div>
+        <div class="founder-content">
+            <h2>Meet the Founder</h2>
+            <p class="quote">"I started ALo while pursuing my nursing studies, with a simple vision: to create candles that would transform everyday spaces into sanctuaries of calm and healing."</p>
+            <p>As a nursing student at PG Hospital, I understand the importance of creating restorative environments. My passion for aromatherapy and traditional Indian fragrances led me to develop ALo candles—combining my knowledge of wellness with beautiful scent profiles that promote relaxation and rejuvenation.</p>
+            <p>— Sreya Mondal, Founder</p>
+            <div class="social-link">
+                <a href="#" class="insta-btn"><i class="fab fa-instagram"></i> Follow Our Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2>Our Collection</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/candle_1.jpg" alt="Serene Lavender Candle">
+                </div>
+                <div class="product-info">
+                    <h3>Serene Lavender</h3>
+                    <p class="product-price">₹1,599</p>
+                    <p class="product-description">Calming lavender blended with subtle notes of vanilla for a soothing experience after a long day.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/candle_1.jpg" alt="Citrus Bloom Candle">
+                </div>
+                <div class="product-info">
+                    <h3>Citrus Bloom</h3>
+                    <p class="product-price">₹1,699</p>
+                    <p class="product-description">Refreshing blend of Indian citrus fruits with jasmine undertones for an uplifting atmosphere.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/candle_1.jpg" alt="Midnight Oud Candle">
+                </div>
+                <div class="product-info">
+                    <h3>Midnight Oud</h3>
+                    <p class="product-price">₹1,899</p>
+                    <p class="product-description">Rich and exotic scent with notes of traditional Indian oud, amber, and sandalwood for a luxurious experience.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/candle_1.jpg" alt="Himalayan Cedar Candle">
+                </div>
+                <div class="product-info">
+                    <h3>Himalayan Cedar</h3>
+                    <p class="product-price">₹1,799</p>
+                    <p class="product-description">Fresh mountain notes with Himalayan cedar, pine, and a hint of warm vanilla for a cozy retreat.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instagram Reel Section -->
+    <section class="instagram-section">
+        <div class="instagram-content">
+            <h2>Follow Our Journey</h2>
+            <p>Get an exclusive behind-the-scenes look at our candle making process, learn about traditional Indian fragrances, and stay updated on new product releases.</p>
+            <a href="#" class="insta-link"><i class="fab fa-instagram"></i> @alo_candles_india</a>
+        </div>
+        <div class="instagram-reel">
+            <div class="reel-preview">
+                <img src="/api/placeholder/600/350" alt="Instagram Reel Preview">
+                <div class="play-button">
+                    <i class="fas fa-play"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide active">
+                <p class="testimonial-text">"ALo candles have transformed my home into a sanctuary. The scents are sophisticated and long-lasting, and the design complements my modern Indian décor perfectly."</p>
+                <p class="testimonial-author">- Priya R., Kolkata</p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"I've tried many luxury candle brands, but ALo stands out for its unique blend of traditional Indian scents with contemporary design. My go-to gift for friends and family."</p>
+                <p class="testimonial-author">- Arjun T., Mumbai</p>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide">
+                <p class="testimonial-text">"As someone sensitive to artificial fragrances, I appreciate ALo's use of natural ingredients. Their candles create a wonderful ambiance in my apartment without overwhelming the space."</p>
+                <p class="testimonial-author">- Nandini J., Delhi</p>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <span class="slider-dot active" onclick="changeSlide(0)"></span>
+            <span class="slider-dot" onclick="changeSlide(1)"></span>
+            <span class="slider-dot" onclick="changeSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you. Whether you have questions about our products, custom orders, or wholesale inquiries, our team is here to help.</p>
+            <p><strong>Email:</strong> hello@alocandles.in</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Address:</strong> 42 Park Street, Kolkata, West Bengal 700016</p>
+        </div>
+        <div class="contact-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ALo Candles</h3>
+                <p>Handcrafted luxury candles inspired by India's rich aromatic heritage. Transforming spaces into sanctuaries since 2023.</p>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for exclusive offers and updates on new products.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email Address">
+                    </div>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 ALo Candles. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navList = document.querySelector('nav ul');
+        
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+        
+        // Testimonial slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        
+        function changeSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = n;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        
+        // Auto-play testimonials
+        setInterval(() => {
+            let next = currentSlide + 1;
+            if (next >= slides.length) next = 0;
+            changeSlide(next);
+        }, 5000);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navList.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    </body>
+    </html>
