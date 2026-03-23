@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - ALo Candles</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+
+        .not-found {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f5efe9 0%, #f8f5f2 100%);
+        }
+
+        .nf-flame {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            animation: flicker 2.5s ease-in-out infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+            50%       { transform: scale(1.06) rotate(2deg); opacity: 1; }
+        }
+
+        .nf-code {
+            font-size: 5rem;
+            font-weight: 200;
+            letter-spacing: 6px;
+            color: #e8c8a9;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .not-found h1 {
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #232323;
+            margin-bottom: 12px;
+        }
+
+        .not-found h1:after { display: none; }
+
+        .not-found p {
+            max-width: 420px;
+            color: #888;
+            font-size: 0.92rem;
+            margin-bottom: 32px;
+        }
+
+        .nf-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nf-links a {
+            padding: 11px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 400;
+            transition: all 0.25s;
+        }
+
+        .nf-primary {
+            background: #232323;
+            color: #f8f5f2;
+        }
+
+        .nf-primary:hover { background: #e8c8a9; color: #232323; }
+
+        .nf-secondary {
+            border: 1px solid #d0c4b8;
+            color: #555;
+        }
+
+        .nf-secondary:hover { border-color: #232323; color: #232323; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="ALo Logo" class="logo-image">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="products.html">Shop</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <div class="not-found">
+        <div class="nf-flame">&#x1F56F;</div>
+        <div class="nf-code">404</div>
+        <h1>This page has gone dark</h1>
+        <p>Looks like the page you're looking for doesn't exist or has been moved. Let's get you back to the light.</p>
+        <div class="nf-links">
+            <a href="index.html" class="nf-primary">Go Home</a>
+            <a href="products.html" class="nf-secondary">Browse Products</a>
+            <a href="index.html#contact" class="nf-secondary">Contact Us</a>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navUl = document.querySelector('nav ul');
+        if (mobileMenu && navUl) {
+            mobileMenu.addEventListener('click', () => {
+                navUl.classList.toggle('active');
+                mobileMenu.classList.toggle('toggle');
+            });
+        }
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
+</html>

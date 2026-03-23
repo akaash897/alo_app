@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - ALo Candles | Handcrafted Luxury Candles</title>
+    <meta name="description" content="Browse the full ALo Candles collection — Serene Lavender, Midnight Oud, Citrus Bloom, Sandalwood Mist and more. Filter by mood, sort by price.">
+    <meta property="og:title" content="Shop - ALo Candles">
+    <meta property="og:description" content="Handcrafted luxury candles made with natural ingredients. Find your perfect scent.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="products.css" rel="stylesheet">
+    <link href="common.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="ALo Logo" class="logo-image">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="products.html" class="active">Shop</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="shop-hero">
+        <div class="shop-hero-content">
+            <p class="shop-eyebrow">Handcrafted with love</p>
+            <h1>Our Collection</h1>
+            <p class="shop-subtitle">Each candle is thoughtfully crafted using natural ingredients and India's finest aromatic heritage. Find your perfect scent.</p>
+        </div>
+        <div class="shop-hero-deco">
+            <span></span><span></span><span></span>
+        </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-inner">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="romantic">Romantic</button>
+            <button class="filter-btn" data-filter="energizing">Energizing</button>
+            <button class="filter-btn" data-filter="luxury">Luxury</button>
+            <button class="filter-btn" data-filter="relaxation">Relaxation</button>
+        </div>
+        <div class="sort-wrapper">
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select">
+                <option value="default">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name">Name A–Z</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Products Grid -->
+    <main class="shop-main">
+        <div class="products-grid reveal-children" id="productsGrid">
+
+            <!-- Card 1 -->
+            <article class="shop-card" data-category="romantic" data-price="1599" data-name="Serene Lavender">
+                <div class="shop-card-image">
+                    <img src="images/candle_1.jpg" alt="Serene Lavender">
+                    <div class="card-overlay">
+                        <button class="overlay-btn quick-view" data-id="1">Quick View</button>
+                    </div>
+                    <span class="card-badge romantic">Romantic</span>
+                </div>
+                <div class="shop-card-body">
+                    <div class="card-meta">
+                        <span class="burn-time"><i class="fas fa-fire"></i> 45 hrs burn</span>
+                        <span class="wax-type">Soy Wax</span>
+                    </div>
+                    <h3>Serene Lavender</h3>
+                    <p class="card-desc">Calming lavender blended with subtle vanilla notes for a soothing atmosphere.</p>
+                    <div class="card-footer">
+                        <span class="card-price">&#8377;1,599</span>
+                        <button class="card-buy-btn" data-id="1">Buy Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="shop-card" data-category="energizing" data-price="1699" data-name="Citrus Bloom">
+                <div class="shop-card-image">
+                    <img src="images/candle_1.jpg" alt="Citrus Bloom">
+                    <div class="card-overlay">
+                        <button class="overlay-btn quick-view" data-id="2">Quick View</button>
+                    </div>
+                    <span class="card-badge energizing">Energizing</span>
+                </div>
+                <div class="shop-card-body">
+                    <div class="card-meta">
+                        <span class="burn-time"><i class="fas fa-fire"></i> 50 hrs burn</span>
+                        <span class="wax-type">Coconut Wax</span>
+                    </div>
+                    <h3>Citrus Bloom</h3>
+                    <p class="card-desc">Refreshing blend of Indian citrus fruits — orange, lime, and bergamot.</p>
+                    <div class="card-footer">
+                        <span class="card-price">&#8377;1,699</span>
+                        <button class="card-buy-btn" data-id="2">Buy Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="shop-card" data-category="luxury" data-price="1899" data-name="Midnight Oud">
+                <div class="shop-card-image">
+                    <img src="images/candle_1.jpg" alt="Midnight Oud">
+                    <div class="card-overlay">
+                        <button class="overlay-btn quick-view" data-id="3">Quick View</button>
+                    </div>
+                    <span class="card-badge luxury">Luxury</span>
+                    <span class="bestseller-ribbon">Best Seller</span>
+                </div>
+                <div class="shop-card-body">
+                    <div class="card-meta">
+                        <span class="burn-time"><i class="fas fa-fire"></i> 55 hrs burn</span>
+                        <span class="wax-type">Vegetable Wax</span>
+                    </div>
+                    <h3>Midnight Oud</h3>
+                    <p class="card-desc">Rich and exotic oud wood with warm amber and whispers of rare spices.</p>
+                    <div class="card-footer">
+                        <span class="card-price">&#8377;1,899</span>
+                        <button class="card-buy-btn" data-id="3">Buy Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="shop-card" data-category="relaxation" data-price="1799" data-name="Sandalwood Mist">
+                <div class="shop-card-image">
+                    <img src="images/candle_1.jpg" alt="Sandalwood Mist">
+                    <div class="card-overlay">
+                        <button class="overlay-btn quick-view" data-id="4">Quick View</button>
+                    </div>
+                    <span class="card-badge relaxation">Relaxation</span>
+                </div>
+                <div class="shop-card-body">
+                    <div class="card-meta">
+                        <span class="burn-time"><i class="fas fa-fire"></i> 50 hrs burn</span>
+                        <span class="wax-type">Soy-Coconut Blend</span>
+                    </div>
+                    <h3>Sandalwood Mist</h3>
+                    <p class="card-desc">Warm sandalwood grounded with delicate jasmine and rose florals.</p>
+                    <div class="card-footer">
+                        <span class="card-price">&#8377;1,799</span>
+                        <button class="card-buy-btn" data-id="4">Buy Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="shop-card" data-category="relaxation" data-price="1649" data-name="Rose Petal Dream">
+                <div class="shop-card-image">
+                    <img src="images/candle_1.jpg" alt="Rose Petal Dream">
+                    <div class="card-overlay">
+                        <button class="overlay-btn quick-view" data-id="5">Quick View</button>
+                    </div>
+                    <span class="card-badge relaxation">Relaxation</span>
+                    <span class="new-ribbon">New</span>
+                </div>
+                <div class="shop-card-body">
+                    <div class="card-meta">
+                        <span class="burn-time"><i class="fas fa-fire"></i> 48 hrs burn</span>
+                        <span class="wax-type">Soy Wax</span>
+                    </div>
+                    <h3>Rose Petal Dream</h3>
+                    <p class="card-desc">Soft Bulgarian rose layered with a base of cedarwood and white musk.</p>
+                    <div class="card-footer">
+                        <span class="card-price">&#8377;1,649</span>
+                        <button class="card-buy-btn" data-id="5">Buy Now</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="shop-card" data-category="energizing" data-price="1749" data-name="Eucalyptus Frost">
+                <div class="shop-card-image">
+                    <img src="images/candle_1.jpg" alt="Eucalyptus Frost">
+                    <div class="card-overlay">
+                        <button class="overlay-btn quick-view" data-id="6">Quick View</button>
+                    </div>
+                    <span class="card-badge energizing">Energizing</span>
+                    <span class="new-ribbon">New</span>
+                </div>
+                <div class="shop-card-body">
+                    <div class="card-meta">
+                        <span class="burn-time"><i class="fas fa-fire"></i> 52 hrs burn</span>
+                        <span class="wax-type">Coconut Wax</span>
+                    </div>
+                    <h3>Eucalyptus Frost</h3>
+                    <p class="card-desc">Crisp eucalyptus and mint with a cool, refreshing forest undertone.</p>
+                    <div class="card-footer">
+                        <span class="card-price">&#8377;1,749</span>
+                        <button class="card-buy-btn" data-id="6">Buy Now</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <i class="fas fa-search"></i>
+            <p>No products found for this filter.</p>
+        </div>
+    </main>
+
+    <!-- Why Choose Us Banner -->
+    <section class="why-us">
+        <div class="why-us-grid">
+            <div class="why-item">
+                <div class="why-icon"><i class="fas fa-leaf"></i></div>
+                <h4>100% Natural</h4>
+                <p>Made with pure plant-based waxes and essential oils</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h4>Handcrafted</h4>
+                <p>Each candle poured and finished by hand in Kolkata</p>
+            </div>
+            <div class="why-us-center">
+                <img src="images/logo.jpg" alt="ALo Candles">
+                <p>Crafted with intention. Lit with love.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+                <h4>Free Shipping</h4>
+                <p>On all orders above &#8377;1,999 across India</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="fas fa-recycle"></i></div>
+                <h4>Eco Friendly</h4>
+                <p>Sustainable packaging and reusable containers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <img src="" alt="" id="modalImage">
+                </div>
+                <div class="modal-right">
+                    <span class="modal-badge" id="modalBadge"></span>
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <div class="modal-divider"></div>
+                    <div class="modal-meta-row">
+                        <span id="modalBurn"><i class="fas fa-fire"></i> </span>
+                        <span id="modalWax"><i class="fas fa-leaf"></i> </span>
+                    </div>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <div class="modal-actions">
+                        <a href="index.html#contact" class="btn modal-buy-btn">Order Now</a>
+                        <a href="index.html#contact" class="modal-enquire">Enquire <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>ALo Candles</h3>
+                <p>Handcrafted luxury candles made with natural ingredients to bring warmth and tranquility to your space.</p>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Care</h3>
+                <ul class="footer-links">
+                    <li><a href="info.html#shipping">Shipping &amp; Returns</a></li>
+                    <li><a href="info.html#faq">FAQs</a></li>
+                    <li><a href="info.html#privacy">Privacy Policy</a></li>
+                    <li><a href="info.html#terms">Terms &amp; Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 ALo Candles. All rights reserved.</p>
+            <p class="view-counter">You have visited this site <span id="visitCount">—</span> time(s)</p>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+    <script>
+    // Page view counter
+    (function () {
+        const key = 'alo_visit_count';
+        const count = (parseInt(localStorage.getItem(key)) || 0) + 1;
+        localStorage.setItem(key, count);
+        document.addEventListener('DOMContentLoaded', function () {
+            const el = document.getElementById('visitCount');
+            if (el) el.textContent = count;
+        });
+    })();
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        // Mobile menu
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navUl = document.querySelector('nav ul');
+        if (mobileMenu && navUl) {
+            mobileMenu.addEventListener('click', () => {
+                navUl.classList.toggle('active');
+                mobileMenu.classList.toggle('toggle');
+            });
+        }
+
+        // Sticky header
+        window.addEventListener('scroll', () => {
+            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ---- Product data ----
+        const products = {
+            1: { name: 'Serene Lavender', price: '&#8377;1,599', category: 'romantic', burn: '45 hrs burn time', wax: 'Soy Wax', image: 'images/candle_1.jpg', desc: 'Our Serene Lavender candle combines the calming properties of pure lavender essential oil with subtle vanilla notes. Handcrafted with natural soy wax, it has a burn time of approximately 45 hours. Perfect for creating a relaxing ambiance in your bedroom or living space — each candle comes in a reusable glass container with an elegant wooden lid.' },
+            2: { name: 'Citrus Bloom',    price: '&#8377;1,699', category: 'energizing', burn: '50 hrs burn time', wax: 'Coconut Wax', image: 'images/candle_1.jpg', desc: 'Inspired by India\'s rich citrus orchards, our Citrus Bloom blends tangy orange, sweet lime, and hints of bergamot. Made with all-natural coconut wax. Ideal for morning routines or whenever you need a boost of energy. Each candle is presented in our signature ceramic container.' },
+            3: { name: 'Midnight Oud',    price: '&#8377;1,899', category: 'luxury', burn: '55 hrs burn time', wax: 'Vegetable Wax', image: 'images/candle_1.jpg', desc: 'Our most luxurious offering, Midnight Oud combines rare oud wood with rich amber and subtle spices. Crafted with premium vegetable wax. Perfect for creating an atmosphere of warmth and luxury during dinner parties or cozy evenings. Comes in a matte black glass container with gold accents.' },
+            4: { name: 'Sandalwood Mist', price: '&#8377;1,799', category: 'relaxation', burn: '50 hrs burn time', wax: 'Soy-Coconut Blend', image: 'images/candle_1.jpg', desc: 'Drawing from India\'s aromatic heritage, our Sandalwood Mist features ethically sourced sandalwood blended with subtle jasmine and rose notes. The warm, woody base with delicate floral notes helps center the mind and create a sense of peace. Housed in a handmade ceramic vessel.' },
+            5: { name: 'Rose Petal Dream', price: '&#8377;1,649', category: 'relaxation', burn: '48 hrs burn time', wax: 'Soy Wax', image: 'images/candle_1.jpg', desc: 'Soft Bulgarian rose petals layered with a warm base of cedarwood and white musk. This new addition to the ALo family is perfect for creating a romantic, spa-like atmosphere at home. Comes in a blush pink frosted glass jar.' },
+            6: { name: 'Eucalyptus Frost', price: '&#8377;1,749', category: 'energizing', burn: '52 hrs burn time', wax: 'Coconut Wax', image: 'images/candle_1.jpg', desc: 'Crisp eucalyptus and cool peppermint are anchored by a refreshing forest undertone. This invigorating scent clears the mind and elevates focus — ideal for home offices or yoga spaces. Made with premium coconut wax in a clear glass vessel.' },
+        };
+
+        // ---- Filter ----
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.shop-card');
+        const emptyState = document.getElementById('emptyState');
+
+        function applyFilters() {
+            const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+            const sortVal = document.getElementById('sort-select').value;
+
+            let visible = [];
+            cards.forEach(card => {
+                const match = activeFilter === 'all' || card.dataset.category === activeFilter;
+                card.style.display = match ? '' : 'none';
+                if (match) visible.push(card);
+            });
+
+            // Sort
+            const grid = document.getElementById('productsGrid');
+            visible.sort((a, b) => {
+                if (sortVal === 'price-asc') return +a.dataset.price - +b.dataset.price;
+                if (sortVal === 'price-desc') return +b.dataset.price - +a.dataset.price;
+                if (sortVal === 'name') return a.dataset.name.localeCompare(b.dataset.name);
+                return 0;
+            });
+            visible.forEach(c => grid.appendChild(c));
+
+            emptyState.style.display = visible.length === 0 ? 'flex' : 'none';
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                applyFilters();
+            });
+        });
+
+        document.getElementById('sort-select').addEventListener('change', applyFilters);
+
+        // ---- Modal ----
+        const modal = document.getElementById('productModal');
+        const closeBtn = document.getElementById('closeModal');
+
+        function openModal(id) {
+            const p = products[id];
+            if (!p) return;
+            document.getElementById('modalImage').src = p.image;
+            document.getElementById('modalImage').alt = p.name;
+            document.getElementById('modalTitle').textContent = p.name;
+            document.getElementById('modalPrice').innerHTML = p.price;
+            document.getElementById('modalBadge').textContent = p.category.charAt(0).toUpperCase() + p.category.slice(1);
+            document.getElementById('modalBadge').className = 'modal-badge ' + p.category;
+            document.getElementById('modalBurn').innerHTML = '<i class="fas fa-fire"></i> ' + p.burn;
+            document.getElementById('modalWax').innerHTML = '<i class="fas fa-leaf"></i> ' + p.wax;
+            document.getElementById('modalDesc').textContent = p.desc;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.quick-view, .card-buy-btn').forEach(btn => {
+            btn.addEventListener('click', () => openModal(+btn.dataset.id));
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    });
+    </script>
+</body>
+</html>

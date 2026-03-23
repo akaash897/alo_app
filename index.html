@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALo Candles - Modern Luxury Candles</title>
+    <title>ALo Candles - Handcrafted Luxury Candles from Kolkata</title>
+    <meta name="description" content="ALo Candles offers handcrafted luxury candles made with natural ingredients and India's finest aromatic heritage. Shop Serene Lavender, Midnight Oud, and more.">
+    <meta name="keywords" content="handcrafted candles, luxury candles India, soy candles Kolkata, ALo candles, aromatherapy candles">
+    <meta property="og:title" content="ALo Candles - Handcrafted Luxury Candles">
+    <meta property="og:description" content="Handcrafted luxury candles made with natural ingredients. Transform your home into a sanctuary with our carefully curated collection.">
+    <meta property="og:image" content="images/logo.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="common.css" rel="stylesheet">
 </head>
 <body>
      <!-- Entrance Animation Overlay -->
@@ -34,7 +40,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
+                <li><a href="products.html">Shop</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -51,7 +57,7 @@
         <div class="hero-content">
             <h1>Illuminating <br> Your Space</h1>
             <p>Handcrafted luxury candles with natural ingredients and elegant designs. Transform your home into a sanctuary with our carefully curated collection of traditional and contemporary scents.</p>
-            <a href="#products" class="btn">Shop Now</a>
+            <a href="products.html" class="btn">Shop Now</a>
         </div>
         <div class="hero-image">
             <div>
@@ -61,12 +67,12 @@
     </section>
 
     <!-- About Section - Fixed to match hero section -->
-    <section class="about" id="about">
+    <section class="about reveal" id="about">
         <div class="about-content">
             <h2>Our Story</h2>
             <p>ALo was born from a passion for creating moments of tranquility in our busy urban lives. Each candle is handcrafted with care in Kolkata, using only the finest natural ingredients and essential oils inspired by India's rich aromatic heritage.</p>
             <p>Our mission is to bring warmth, comfort, and a touch of luxury to your everyday life at affordable prices. We believe in sustainable practices and eco-friendly materials, ensuring our products are as kind to the earth as they are to your senses.</p>
-            <a href="#products" class="btn">Discover Our Collection</a>
+            <a href="products.html" class="btn">Discover Our Collection</a>
         </div>
         <div class="about-image">
             <img src="images/placeholder.jpg" alt="ALo Candle Making Process">
@@ -74,7 +80,7 @@
     </section>
     
     <!-- Founder Section -->
-    <section class="founder" id="founder">
+    <section class="founder reveal" id="founder">
         <div class="founder-image">
             <img src="images/founder.jpg" alt="ALo Founder - Sreya Mondal">
         </div>
@@ -90,7 +96,7 @@
     </section>
 
     <!-- Products Section - New Carousel Version -->
-    <section class="products" id="products">
+    <section class="products reveal" id="products">
         <h2>Our Collection</h2>
         <div class="carousel-container">
             <div class="carousel">
@@ -221,7 +227,7 @@
     </div>
 
     <!-- Instagram Reel Section -->
-    <section class="instagram-section">
+    <section class="instagram-section reveal">
         <div class="instagram-content">
             <h2>Behind the Scenes</h2>
             <p>Get a glimpse of our candle-making process and see how each ALo creation comes to life. From selecting the finest ingredients to the final touches that make our products special, we take pride in every step.</p>
@@ -230,7 +236,7 @@
         </div>
         <div class="instagram-reel">
             <div class="reel-preview">
-                <img src="images/reel-preview.jpg" alt="ALo Candles Instagram Reel">
+                <img src="images/placeholder.jpg" alt="ALo Candles Instagram Reel">
                 <div class="play-button">
                     <i class="fas fa-play"></i>
                 </div>
@@ -239,7 +245,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials reveal" id="testimonials">
         <h2>What Our Customers Say</h2>
         <div class="testimonial-slider">
             <div class="testimonial-slide active">
@@ -262,13 +268,30 @@
         </div>
     </section>
 
+    <!-- Newsletter -->
+    <section class="newsletter-section reveal">
+        <div class="newsletter-inner">
+            <p class="newsletter-eyebrow">Stay in the loop</p>
+            <h2>Join the ALo Circle</h2>
+            <p>Be the first to hear about new scents, seasonal collections, and exclusive offers. No spam, ever.</p>
+            <form class="newsletter-form" id="newsletterForm" novalidate>
+                <input type="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="newsletter-success" id="newsletterSuccess">
+                <i class="fas fa-check-circle"></i> You're on the list — welcome to the ALo Circle!
+            </div>
+            <p class="newsletter-note">You can unsubscribe at any time. We respect your privacy.</p>
+        </div>
+    </section>
+
     <!-- Contact -->
-    <section class="contact" id="contact">
+    <section class="contact reveal" id="contact">
         <div class="contact-info">
             <h2>Get in Touch</h2>
             <p>We'd love to hear from you! Whether you have questions about our products, need assistance with an order, or want to explore collaborations, our team is here to help.</p>
             <p><strong>Email:</strong> hello@alocandles.com</p>
-            <p><strong>Phone:</strong> +91 9876543210</p>
+            <p><strong>Phone:</strong> Coming soon</p>
             <p><strong>Address:</strong> Studio 7, Creative Hub, Park Street, Kolkata - 700016</p>
             <p>Follow us on social media for updates and inspiration:</p>
             <ul class="social-links">
@@ -317,7 +340,7 @@
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#products">Products</a></li>
+                    <li><a href="products.html">Shop</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -325,21 +348,36 @@
             <div class="footer-column">
                 <h3>Customer Care</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="info.html#shipping">Shipping &amp; Returns</a></li>
+                    <li><a href="info.html#faq">FAQs</a></li>
+                    <li><a href="info.html#privacy">Privacy Policy</a></li>
+                    <li><a href="info.html#terms">Terms &amp; Conditions</a></li>
                 </ul>
             </div>
         </div>
         <div class="copyright">
             <p>&copy; 2025 ALo Candles. All rights reserved.</p>
+            <p class="view-counter">You have visited this site <span id="visitCount">—</span> time(s)</p>
         </div>
     </footer>
+
+    <!-- Shared components -->
+    <script src="common.js"></script>
 
     <!-- JavaScript -->
     <script>
         
+        // Page view counter
+        (function () {
+            const key = 'alo_visit_count';
+            const count = (parseInt(localStorage.getItem(key)) || 0) + 1;
+            localStorage.setItem(key, count);
+            document.addEventListener('DOMContentLoaded', function () {
+                const el = document.getElementById('visitCount');
+                if (el) el.textContent = count;
+            });
+        })();
+
         // Wait for the DOM to fully load before running any scripts
 document.addEventListener('DOMContentLoaded', function() {
     // Create random candle flames in the background

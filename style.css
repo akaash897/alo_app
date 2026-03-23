@@ -980,6 +980,24 @@ footer {
     color: rgba(255,255,255,0.7);
 }
 
+.view-counter {
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.5px;
+}
+
+.view-counter span {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Global image safety */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Mobile navigation styles */
 @media (max-width: 768px) {
     .mobile-menu {
@@ -1086,6 +1104,15 @@ footer {
         margin-bottom: 2rem;
     }
     
+    /* Typography scaling */
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* Section padding */
+    section { padding: 60px 5%; }
+    .founder { padding: 60px 5%; }
+    .instagram-section { padding: 60px 5%; }
+
     .modal-product-details {
         flex-direction: column;
     }
