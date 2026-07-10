@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Serene Lavender",
+    "price": 1599,
+    "priceDisplay": "₹1,599",
+    "category": "romantic",
+    "image": "images/candle_1.jpg",
+    "burn": "45 hrs burn time",
+    "wax": "Soy Wax",
+    "desc": "Our Serene Lavender candle combines the calming properties of pure lavender essential oil with subtle vanilla notes. Handcrafted with natural soy wax, it has a burn time of approximately 45 hours. Perfect for creating a relaxing ambiance in your bedroom or living space — each candle comes in a reusable glass container with an elegant wooden lid.",
+    "descShort": "Calming lavender blended with subtle vanilla notes for a soothing atmosphere."
+  },
+  {
+    "id": 2,
+    "name": "Citrus Bloom",
+    "price": 1699,
+    "priceDisplay": "₹1,699",
+    "category": "energizing",
+    "image": "images/candle_1.jpg",
+    "burn": "50 hrs burn time",
+    "wax": "Coconut Wax",
+    "desc": "Inspired by India's rich citrus orchards, our Citrus Bloom blends tangy orange, sweet lime, and hints of bergamot. Made with all-natural coconut wax. Ideal for morning routines or whenever you need a boost of energy. Each candle is presented in our signature ceramic container.",
+    "descShort": "Refreshing blend of Indian citrus fruits — orange, lime, and bergamot."
+  },
+  {
+    "id": 3,
+    "name": "Midnight Oud",
+    "price": 1899,
+    "priceDisplay": "₹1,899",
+    "category": "luxury",
+    "image": "images/candle_1.jpg",
+    "burn": "55 hrs burn time",
+    "wax": "Vegetable Wax",
+    "desc": "Our most luxurious offering, Midnight Oud combines rare oud wood with rich amber and subtle spices. Crafted with premium vegetable wax. Perfect for creating an atmosphere of warmth and luxury during dinner parties or cozy evenings. Comes in a matte black glass container with gold accents.",
+    "descShort": "Rich and exotic oud wood with warm amber and whispers of rare spices."
+  },
+  {
+    "id": 4,
+    "name": "Sandalwood Mist",
+    "price": 1799,
+    "priceDisplay": "₹1,799",
+    "category": "relaxation",
+    "image": "images/candle_1.jpg",
+    "burn": "50 hrs burn time",
+    "wax": "Soy-Coconut Blend",
+    "desc": "Drawing from India's aromatic heritage, our Sandalwood Mist features ethically sourced sandalwood blended with subtle jasmine and rose notes. The warm, woody base with delicate floral notes helps center the mind and create a sense of peace. Housed in a handmade ceramic vessel.",
+    "descShort": "Warm sandalwood grounded with delicate jasmine and rose florals."
+  },
+  {
+    "id": 5,
+    "name": "Rose Petal Dream",
+    "price": 1649,
+    "priceDisplay": "₹1,649",
+    "category": "relaxation",
+    "image": "images/candle_1.jpg",
+    "burn": "48 hrs burn time",
+    "wax": "Soy Wax",
+    "desc": "Soft Bulgarian rose petals layered with a warm base of cedarwood and white musk. This new addition to the ALo family is perfect for creating a romantic, spa-like atmosphere at home. Comes in a blush pink frosted glass jar.",
+    "descShort": "Soft Bulgarian rose layered with a base of cedarwood and white musk."
+  },
+  {
+    "id": 6,
+    "name": "Eucalyptus Frost",
+    "price": 1749,
+    "priceDisplay": "₹1,749",
+    "category": "energizing",
+    "image": "images/candle_1.jpg",
+    "burn": "52 hrs burn time",
+    "wax": "Coconut Wax",
+    "desc": "Crisp eucalyptus and cool peppermint are anchored by a refreshing forest undertone. This invigorating scent clears the mind and elevates focus — ideal for home offices or yoga spaces. Made with premium coconut wax in a clear glass vessel.",
+    "descShort": "Crisp eucalyptus and mint with a cool, refreshing forest undertone."
+  }
+]

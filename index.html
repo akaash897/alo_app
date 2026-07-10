@@ -14,10 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <link href="products.css" rel="stylesheet">
     <link href="common.css" rel="stylesheet">
 </head>
 <body>
-     <!-- Entrance Animation Overlay -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Entrance Animation Overlay -->
     <div class="entrance-overlay">
         <div class="entrance-content">
             <div class="entrance-logo">
@@ -31,12 +34,13 @@
         </div>
         <div class="candle-flames"></div>
     </div>
+
     <!-- Header -->
     <header>
         <div class="logo">
             <img src="images/logo.jpg" alt="ALo Logo" class="logo-image">
         </div>
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -45,12 +49,14 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="mobile-menu">
+        <div class="mobile-menu" aria-label="Toggle navigation menu" role="button" tabindex="0">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
     </header>
+
+    <main id="main-content">
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -61,12 +67,12 @@
         </div>
         <div class="hero-image">
             <div>
-                <img src="images/logo.jpg" alt="ALo Signature Candle">
+                <img src="images/logo.jpg" alt="ALo Signature Candle" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- About Section - Fixed to match hero section -->
+    <!-- About Section -->
     <section class="about reveal" id="about">
         <div class="about-content">
             <h2>Our Story</h2>
@@ -75,14 +81,14 @@
             <a href="products.html" class="btn">Discover Our Collection</a>
         </div>
         <div class="about-image">
-            <img src="images/placeholder.jpg" alt="ALo Candle Making Process">
+            <img src="images/placeholder.jpg" alt="ALo Candle Making Process" loading="lazy">
         </div>
     </section>
-    
+
     <!-- Founder Section -->
     <section class="founder reveal" id="founder">
         <div class="founder-image">
-            <img src="images/founder.jpg" alt="ALo Founder - Sreya Mondal">
+            <img src="images/founder.jpg" alt="ALo Founder - Sreya Mondal" loading="lazy">
         </div>
         <div class="founder-content">
             <h2>Meet the Founder</h2>
@@ -95,132 +101,38 @@
         </div>
     </section>
 
-    <!-- Products Section - New Carousel Version -->
+    <!-- Products Section - Carousel -->
     <section class="products reveal" id="products">
         <h2>Our Collection</h2>
-        <div class="carousel-container">
-            <div class="carousel">
-                <!-- Product 1 -->
-                <div class="product-card" data-id="1">
-                    <div class="product-tag romantic">Romantic</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Serene Lavender Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Serene Lavender</h3>
-                        <p class="product-price">₹1,599</p>
-                        <p class="product-short-desc">Calming lavender blended with vanilla notes</p>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card" data-id="2">
-                    <div class="product-tag energizing">Energizing</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Citrus Bloom Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Citrus Bloom</h3>
-                        <p class="product-price">₹1,699</p>
-                        <p class="product-short-desc">Refreshing blend of Indian citrus fruits</p>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card" data-id="3">
-                    <div class="product-tag luxury">Luxury</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Midnight Oud Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Midnight Oud</h3>
-                        <p class="product-price">₹1,899</p>
-                        <p class="product-short-desc">Rich and exotic scent with oud and amber</p>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card" data-id="4">
-                    <div class="product-tag relaxation">Relaxation</div>
-                    <div class="product-image">
-			<img src="images/candle_1.jpg" alt="Sandalwood Mist Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sandalwood Mist</h3>
-                        <p class="product-price">₹1,799</p>
-                        <p class="product-short-desc">Calming sandalwood with subtle floral notes</p>
-                    </div>
-                </div>
-                
-                <!-- Duplicate Products for Carousel Effect -->
-                <!-- Product 1 Duplicate -->
-                <div class="product-card" data-id="1">
-                    <div class="product-tag romantic">Romantic</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Serene Lavender Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Serene Lavender</h3>
-                        <p class="product-price">₹1,599</p>
-                        <p class="product-short-desc">Calming lavender blended with vanilla notes</p>
-                    </div>
-                </div>
-                
-                <!-- Product 2 Duplicate -->
-                <div class="product-card" data-id="2">
-                    <div class="product-tag energizing">Energizing</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Citrus Bloom Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Citrus Bloom</h3>
-                        <p class="product-price">₹1,699</p>
-                        <p class="product-short-desc">Refreshing blend of Indian citrus fruits</p>
-                    </div>
-                </div>
-                
-                <!-- Product 3 Duplicate -->
-                <div class="product-card" data-id="3">
-                    <div class="product-tag luxury">Luxury</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Midnight Oud Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Midnight Oud</h3>
-                        <p class="product-price">₹1,899</p>
-                        <p class="product-short-desc">Rich and exotic scent with oud and amber</p>
-                    </div>
-                </div>
-                
-                <!-- Product 4 Duplicate -->
-                <div class="product-card" data-id="4">
-                    <div class="product-tag relaxation">Relaxation</div>
-                    <div class="product-image">
-                        <img src="images/candle_1.jpg" alt="Sandalwood Mist Candle">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sandalwood Mist</h3>
-                        <p class="product-price">₹1,799</p>
-                        <p class="product-short-desc">Calming sandalwood with subtle floral notes</p>
-                    </div>
-                </div>
+        <div class="carousel-container" id="homeCarousel">
+            <div class="carousel" id="homeCarouselTrack">
+                <!-- Populated by JS from products.json -->
             </div>
         </div>
     </section>
 
     <!-- Product Detail Modal -->
-    <div class="product-modal">
+    <div class="product-modal" id="homeProductModal" role="dialog" aria-modal="true" aria-label="Product details">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-product-details">
-                <div class="modal-product-image">
-                    <img src="" alt="Product Image">
+            <button class="close-modal" id="homeCloseModal" aria-label="Close">&times;</button>
+            <div class="modal-inner">
+                <div class="modal-left">
+                    <img src="" alt="" id="homeModalImage">
                 </div>
-                <div class="modal-product-info">
-                    <h2 class="modal-product-title"></h2>
-                    <p class="modal-price"></p>
-                    <div class="modal-desc"></div>
-                    <a href="#" class="buy-now">Buy Now</a>
+                <div class="modal-right">
+                    <span class="modal-badge" id="homeModalBadge"></span>
+                    <h2 id="homeModalTitle"></h2>
+                    <p class="modal-price" id="homeModalPrice"></p>
+                    <div class="modal-divider"></div>
+                    <div class="modal-meta-row">
+                        <span id="homeModalBurn"><i class="fas fa-fire"></i> </span>
+                        <span id="homeModalWax"><i class="fas fa-leaf"></i> </span>
+                    </div>
+                    <p class="modal-desc" id="homeModalDesc"></p>
+                    <div class="modal-actions">
+                        <a href="products.html" class="btn modal-buy-btn">Shop Collection</a>
+                        <a href="index.html#contact" class="modal-enquire">Enquire <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,7 +148,7 @@
         </div>
         <div class="instagram-reel">
             <div class="reel-preview">
-                <img src="images/placeholder.jpg" alt="ALo Candles Instagram Reel">
+                <img src="images/placeholder.jpg" alt="ALo Candles Instagram Reel" loading="lazy">
                 <div class="play-button">
                     <i class="fas fa-play"></i>
                 </div>
@@ -262,9 +174,9 @@
             </div>
         </div>
         <div class="slider-nav">
-            <span class="slider-dot active" data-slide="0"></span>
-            <span class="slider-dot" data-slide="1"></span>
-            <span class="slider-dot" data-slide="2"></span>
+            <span class="slider-dot active" data-slide="0" role="button" tabindex="0" aria-label="Testimonial 1"></span>
+            <span class="slider-dot" data-slide="1" role="button" tabindex="0" aria-label="Testimonial 2"></span>
+            <span class="slider-dot" data-slide="2" role="button" tabindex="0" aria-label="Testimonial 3"></span>
         </div>
     </section>
 
@@ -275,7 +187,7 @@
             <h2>Join the ALo Circle</h2>
             <p>Be the first to hear about new scents, seasonal collections, and exclusive offers. No spam, ever.</p>
             <form class="newsletter-form" id="newsletterForm" novalidate>
-                <input type="email" placeholder="Your email address" required aria-label="Email address">
+                <input type="email" placeholder="Your email address" required aria-label="Email address" autocomplete="email">
                 <button type="submit">Subscribe</button>
             </form>
             <div class="newsletter-success" id="newsletterSuccess">
@@ -295,33 +207,35 @@
             <p><strong>Address:</strong> Studio 7, Creative Hub, Park Street, Kolkata - 700016</p>
             <p>Follow us on social media for updates and inspiration:</p>
             <ul class="social-links">
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
             </ul>
         </div>
         <div class="contact-form">
             <form>
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" required autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" required autocomplete="email">
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject">
+                    <input type="text" id="subject" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" required></textarea>
+                    <textarea id="message" required autocomplete="off"></textarea>
                 </div>
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -330,9 +244,9 @@
                 <h3>ALo Candles</h3>
                 <p>Handcrafted luxury candles made with natural ingredients to bring warmth and tranquility to your space.</p>
                 <ul class="social-links">
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -361,252 +275,165 @@
         </div>
     </footer>
 
-    <!-- Shared components -->
     <script src="common.js"></script>
-
-    <!-- JavaScript -->
     <script>
-        
-        // Page view counter
-        (function () {
-            const key = 'alo_visit_count';
-            const count = (parseInt(localStorage.getItem(key)) || 0) + 1;
-            localStorage.setItem(key, count);
-            document.addEventListener('DOMContentLoaded', function () {
-                const el = document.getElementById('visitCount');
-                if (el) el.textContent = count;
-            });
-        })();
+    document.addEventListener('DOMContentLoaded', function () {
+        var entranceOverlay = document.querySelector('.entrance-overlay');
+        var tapButton = document.querySelector('.tap-button');
 
-        // Wait for the DOM to fully load before running any scripts
-document.addEventListener('DOMContentLoaded', function() {
-    // Create random candle flames in the background
-    const createFlames = () => {
-        const flamesContainer = document.querySelector('.candle-flames');
+        /* ── Candle Flames ───────────────────────── */
+        var flamesContainer = document.querySelector('.candle-flames');
         if (flamesContainer) {
-            const numFlames = 30;
-            
-            for (let i = 0; i < numFlames; i++) {
-                const flame = document.createElement('div');
-                flame.classList.add('flame');
-                
-                // Random position
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                
-                // Random size
-                const size = 10 + Math.random() * 15;
-                
-                // Random animation delay
-                const delay = Math.random() * 5;
-                
-                flame.style.left = `${x}%`;
-                flame.style.top = `${y}%`;
-                flame.style.width = `${size}px`;
-                flame.style.height = `${size}px`;
-                flame.style.animationDelay = `${delay}s`;
-                
+            for (var i = 0; i < 30; i++) {
+                var flame = document.createElement('div');
+                flame.className = 'flame';
+                flame.style.left = Math.random() * 100 + '%';
+                flame.style.top = Math.random() * 100 + '%';
+                var size = 10 + Math.random() * 15;
+                flame.style.width = size + 'px';
+                flame.style.height = size + 'px';
+                flame.style.animationDelay = Math.random() * 5 + 's';
                 flamesContainer.appendChild(flame);
             }
         }
-    };
 
-    // Create flames initially
-    createFlames();
-
-    // Handle tap to enter
-    const tapButton = document.querySelector('.tap-button');
-    const entranceOverlay = document.querySelector('.entrance-overlay');
-    
-    if (tapButton && entranceOverlay) {
-        tapButton.addEventListener('click', () => {
-            // Animate entrance content
-            const entranceContent = document.querySelector('.entrance-content');
-            if (entranceContent) {
-                entranceContent.style.transform = 'translateY(-20px)';
-                entranceContent.style.opacity = '0';
-            }
-            
-            // Delay before showing main content
-            setTimeout(() => {
-                entranceOverlay.style.opacity = '0';
-                
-                // Remove overlay after animation completes
-                setTimeout(() => {
-                    entranceOverlay.style.display = 'none';
-                }, 1000);
-            }, 800);
-        });
-    }
-    
-    // Mobile menu toggle
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('nav ul');
-    
-    if (mobileMenu && navLinks) {
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('toggle');
-        });
-    }
-    
-    // Smooth scrolling for navigation links
-    const navbarLinks = document.querySelectorAll('nav a');
-    const footerLinks = document.querySelectorAll('.footer-links a');
-    
-    // Function to handle smooth scrolling
-    function smoothScroll(link) {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    if (navLinks && navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        if (mobileMenu) mobileMenu.classList.remove('toggle');
-                    }
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80, // Offset for header
-                        behavior: 'smooth'
-                    });
+        /* ── Tap to Enter ────────────────────────── */
+        if (tapButton && entranceOverlay) {
+            tapButton.addEventListener('click', function () {
+                var entranceContent = document.querySelector('.entrance-content');
+                if (entranceContent) {
+                    entranceContent.style.transform = 'translateY(-20px)';
+                    entranceContent.style.opacity = '0';
                 }
-            }
-        });
-    }
-    
-    // Apply smooth scrolling to all navigation links
-    navbarLinks.forEach(smoothScroll);
-    footerLinks.forEach(smoothScroll);
-    
-    // Sticky header
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (header) {
-            header.classList.toggle('scrolled', window.scrollY > 50);
+                setTimeout(function () {
+                    entranceOverlay.style.opacity = '0';
+                    setTimeout(function () {
+                        entranceOverlay.style.display = 'none';
+                    }, 1000);
+                }, 800);
+            });
         }
-    });
-    
-    // Testimonial slider
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const dots = document.querySelectorAll('.slider-dot');
-    let currentSlide = 0;
-    
-    function showSlide(index) {
-        if (slides.length > 0 && dots.length > 0) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
+
+        /* ── Testimonial Slider ──────────────────── */
+        var slides = document.querySelectorAll('.testimonial-slide');
+        var dots = document.querySelectorAll('.slider-dot');
+        var currentSlide = 0;
+        var slideInterval;
+
+        function showSlide(index) {
+            if (!slides.length || !dots.length) return;
+            slides.forEach(function (s) { s.classList.remove('active'); });
+            dots.forEach(function (d) { d.classList.remove('active'); });
             slides[index].classList.add('active');
             dots[index].classList.add('active');
             currentSlide = index;
         }
-    }
-    
-    if (dots.length > 0) {
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-            });
+
+        dots.forEach(function (dot, index) {
+            dot.addEventListener('click', function () { showSlide(index); });
         });
-        
-        // Auto slide every 5 seconds
+
         if (slides.length > 0) {
-            setInterval(() => {
-                let nextSlide = (currentSlide + 1) % slides.length;
-                showSlide(nextSlide);
+            slideInterval = setInterval(function () {
+                showSlide((currentSlide + 1) % slides.length);
             }, 5000);
         }
-    }
-    
-    // Product Modal
-    const productCards = document.querySelectorAll('.product-card');
-    const productModal = document.querySelector('.product-modal');
-    const closeModal = document.querySelector('.close-modal');
-    
-    // Product details (would typically come from a database)
-    const products = [
-        {
-            id: 1,
-            name: "Serene Lavender",
-            price: "₹1,599",
-            image: "images/candle_1.jpg",
-            description: "Our Serene Lavender candle combines the calming properties of pure lavender essential oil with subtle vanilla notes. Handcrafted with natural soy wax, this candle has a burn time of approximately 45 hours.<br><br>Perfect for creating a relaxing ambiance in your bedroom or living space, the lavender scent helps reduce stress and promotes better sleep. Each candle comes in a reusable glass container with an elegant wooden lid."
-        },
-        {
-            id: 2,
-            name: "Citrus Bloom",
-            price: "₹1,699",
-            image: "images/candle_1.jpg",
-            description: "Inspired by India's rich citrus orchards, our Citrus Bloom candle blends tangy orange, sweet lime, and hints of bergamot. Made with all-natural coconut wax, this energizing scent has a burn time of approximately 50 hours.<br><br>Ideal for morning routines or whenever you need a boost of energy and positivity. The fresh, zesty fragrance helps clear the mind and uplift your mood. Each candle is presented in our signature ceramic container."
-        },
-        {
-            id: 3,
-            name: "Midnight Oud",
-            price: "₹1,899",
-            image: "images/candle_1.jpg",
-            description: "Our most luxurious offering, Midnight Oud combines rare oud wood with rich amber and subtle spices. Crafted with premium vegetable wax, this sophisticated scent has a burn time of approximately 55 hours.<br><br>Perfect for creating an atmosphere of warmth and luxury during dinner parties or cozy evenings at home. The complex, exotic fragrance profile unfolds gradually, revealing new notes over time. Each candle comes in a matte black glass container with gold accents."
-        },
-        {
-            id: 4,
-            name: "Sandalwood Mist",
-            price: "₹1,799",
-            image: "images/candle_1.jpg",
-            description: "Drawing from India's aromatic heritage, our Sandalwood Mist candle features ethically sourced sandalwood blended with subtle jasmine and rose notes. Made with a premium soy-coconut wax blend, this balanced scent has a burn time of approximately 50 hours.<br><br>Ideal for meditation spaces or creating a serene atmosphere in any room. The warm, woody base with delicate floral notes helps center the mind and create a sense of peace. Each candle is housed in a handmade ceramic vessel."
-        }
-    ];
-    
-    // Open modal with product details
-    if (productCards.length > 0 && productModal) {
-        const modalTitle = document.querySelector('.modal-product-title');
-        const modalPrice = document.querySelector('.modal-price');
-        const modalDesc = document.querySelector('.modal-desc');
-        const modalImage = document.querySelector('.modal-product-image img');
-        
-        productCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const productId = parseInt(card.getAttribute('data-id'));
-                const product = products.find(p => p.id === productId);
-                
-                if (product && modalTitle && modalPrice && modalDesc && modalImage) {
-                    modalTitle.textContent = product.name;
-                    modalPrice.textContent = product.price;
-                    modalDesc.innerHTML = product.description;
-                    modalImage.src = product.image;
-                    modalImage.alt = product.name;
-                    
-                    productModal.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-                }
+
+        /* ── Product Carousel (from JSON) ────────── */
+        function buildCarousel(products) {
+            var track = document.getElementById('homeCarouselTrack');
+            if (!track || !products.length) return;
+
+            // Each product appears twice for infinite scroll effect
+            var doubled = products.concat(products);
+            track.innerHTML = '';
+            doubled.forEach(function (p) {
+                var card = document.createElement('div');
+                card.className = 'product-card';
+                card.setAttribute('data-id', p.id);
+                card.innerHTML =
+                    '<div class="product-tag ' + p.category + '">' + p.category.charAt(0).toUpperCase() + p.category.slice(1) + '</div>' +
+                    '<div class="product-image"><img src="' + p.image + '" alt="' + p.name + '" loading="lazy"></div>' +
+                    '<div class="product-info"><h3>' + p.name + '</h3>' +
+                    '<p class="product-price">' + p.priceDisplay + '</p>' +
+                    '<p class="product-short-desc">' + p.descShort + '</p></div>';
+                track.appendChild(card);
             });
-        });
-    }
-    
-    // Close modal
-    if (closeModal && productModal) {
-        closeModal.addEventListener('click', () => {
-            productModal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        });
-        
-        // Close modal when clicking outside content
-        window.addEventListener('click', (e) => {
-            if (e.target === productModal) {
-                productModal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+
+        /* ── Home Page Modal ─────────────────────── */
+        var modal = document.getElementById('homeProductModal');
+        var closeBtn = document.getElementById('homeCloseModal');
+        var modalTitle = document.getElementById('homeModalTitle');
+        var modalPrice = document.getElementById('homeModalPrice');
+        var modalDesc = document.getElementById('homeModalDesc');
+        var modalImage = document.getElementById('homeModalImage');
+        var modalBadge = document.getElementById('homeModalBadge');
+        var modalBurn = document.getElementById('homeModalBurn');
+        var modalWax = document.getElementById('homeModalWax');
+
+        var allProducts = [];
+
+        function openHomeModal(id) {
+            var product = allProducts.find(function (p) { return p.id === id; });
+            if (!product || !modal) return;
+            if (modalTitle) modalTitle.textContent = product.name;
+            if (modalPrice) modalPrice.innerHTML = product.priceDisplay;
+            if (modalDesc) modalDesc.innerHTML = product.desc;
+            if (modalImage) { modalImage.src = product.image; modalImage.alt = product.name; }
+            if (modalBadge) {
+                modalBadge.textContent = product.category.charAt(0).toUpperCase() + product.category.slice(1);
+                modalBadge.className = 'modal-badge ' + product.category;
             }
-        });
-    }
-    
-    // Instagram reel preview - would typically open Instagram app or web view
-    const reelPreview = document.querySelector('.reel-preview');
-    if (reelPreview) {
-        reelPreview.addEventListener('click', () => {
-            alert('Opening Instagram reel... (This would navigate to Instagram in a real implementation)');
-        });
-    }
-});
+            if (modalBurn) modalBurn.innerHTML = '<i class="fas fa-fire"></i> ' + product.burn;
+            if (modalWax) modalWax.innerHTML = '<i class="fas fa-leaf"></i> ' + product.wax;
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            if (closeBtn) closeBtn.focus();
+        }
+
+        function closeHomeModal() {
+            if (!modal) return;
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        if (closeBtn && modal) {
+            closeBtn.addEventListener('click', closeHomeModal);
+            window.addEventListener('click', function (e) {
+                if (e.target === modal) closeHomeModal();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeHomeModal();
+            });
+        }
+
+        /* ── Fetch Products ──────────────────────── */
+        fetch('data/products.json')
+            .then(function (r) { return r.json(); })
+            .then(function (products) {
+                allProducts = products;
+                buildCarousel(products);
+
+                // Wire up carousel cards to open modal
+                document.querySelectorAll('#homeCarouselTrack .product-card').forEach(function (card) {
+                    card.addEventListener('click', function () {
+                        openHomeModal(parseInt(card.getAttribute('data-id')));
+                    });
+                });
+            })
+            .catch(function () {
+                // Fallback: silently degrade
+            });
+
+        /* ── Instagram Reel ──────────────────────── */
+        var reelPreview = document.querySelector('.reel-preview');
+        if (reelPreview) {
+            reelPreview.addEventListener('click', function () {
+                alert('Opening Instagram reel... (This would navigate to Instagram in a real implementation)');
+            });
+        }
+    });
     </script>
 </body>
+</html>

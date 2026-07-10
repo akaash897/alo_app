@@ -1,15 +1,80 @@
-/* =============================================
-   common.js — shared behaviour across all ALo pages
-   ============================================= */
 (function () {
     'use strict';
 
+    /* ── Configuration ─────────────────────────── */
+    var CONFIG = {
+        WHATSAPP_NUMBER: '',  // e.g. '91XXXXXXXXXX'
+        WHATSAPP_MESSAGE: 'Hi! I\'d like to know more about ALo Candles.',
+        VISIT_COUNT_KEY: 'alo_visit_count',
+        COOKIE_CONSENT_KEY: 'alo_cookie_consent',
+        NEWSLETTER_KEY: 'alo_newsletter',
+        SCROLL_TOP_THRESHOLD: 400
+    };
+
+    /* ── Page View Counter ─────────────────────── */
+    function initVisitCounter() {
+        var count = (parseInt(localStorage.getItem(CONFIG.VISIT_COUNT_KEY)) || 0) + 1;
+        localStorage.setItem(CONFIG.VISIT_COUNT_KEY, count);
+        var el = document.getElementById('visitCount');
+        if (el) { el.textContent = count; }
+    }
+
+    /* ── Mobile Menu Toggle ────────────────────── */
+    function initMobileMenu() {
+        var menu = document.querySelector('.mobile-menu');
+        var nav = document.querySelector('nav ul');
+        if (!menu || !nav) return;
+
+        menu.addEventListener('click', function () {
+            nav.classList.toggle('active');
+            menu.classList.toggle('toggle');
+        });
+
+        // Close menu on link click
+        nav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                nav.classList.remove('active');
+                menu.classList.remove('toggle');
+            });
+        });
+    }
+
+    /* ── Sticky Header ─────────────────────────── */
+    function initStickyHeader() {
+        var header = document.querySelector('header');
+        if (!header) return;
+
+        var onScroll = function () {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll(); // initial check
+    }
+
+    /* ── Smooth Scroll for Anchor Links ────────── */
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var targetId = link.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+                var target = document.querySelector(targetId);
+                if (!target) return;
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+
     /* ── Scroll Reveal ─────────────────────────── */
     function initReveal() {
-        const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-children');
+        var targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-children');
         if (!targets.length) return;
 
-        const observer = new IntersectionObserver(function (entries) {
+        var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
@@ -30,7 +95,7 @@
         document.body.appendChild(btn);
 
         window.addEventListener('scroll', function () {
-            btn.classList.toggle('visible', window.scrollY > 400);
+            btn.classList.toggle('visible', window.scrollY > CONFIG.SCROLL_TOP_THRESHOLD);
         }, { passive: true });
 
         btn.addEventListener('click', function () {
@@ -40,12 +105,13 @@
 
     /* ── WhatsApp Floating Button ──────────────── */
     function initWhatsApp() {
-        var phone = ''; // add WhatsApp number here e.g. '91XXXXXXXXXX'
+        var phone = CONFIG.WHATSAPP_NUMBER;
         if (!phone) return;
-        var message = encodeURIComponent('Hi! I\'d like to know more about ALo Candles.');
+
+        var msg = encodeURIComponent(CONFIG.WHATSAPP_MESSAGE);
         var a = document.createElement('a');
         a.id = 'whatsappBtn';
-        a.href = 'https://wa.me/' + phone + '?text=' + message;
+        a.href = 'https://wa.me/' + phone + '?text=' + msg;
         a.target = '_blank';
         a.rel = 'noopener noreferrer';
         a.setAttribute('aria-label', 'Chat on WhatsApp');
@@ -55,30 +121,30 @@
 
     /* ── Cookie Consent ────────────────────────── */
     function initCookieConsent() {
-        var STORAGE_KEY = 'alo_cookie_consent';
-        if (localStorage.getItem(STORAGE_KEY)) return; // already decided
+        if (localStorage.getItem(CONFIG.COOKIE_CONSENT_KEY)) return;
 
         var banner = document.createElement('div');
         banner.id = 'cookieBanner';
         banner.innerHTML =
-            '<p>We use essential cookies to improve your experience on our site. Read our <a href="info.html#privacy">Privacy Policy</a> to learn more.</p>' +
+            '<p>We use essential cookies to improve your experience. Read our <a href="info.html#privacy">Privacy Policy</a>.</p>' +
             '<div class="cookie-actions">' +
             '  <button class="cookie-btn cookie-decline" id="cookieDecline">Decline</button>' +
             '  <button class="cookie-btn cookie-accept" id="cookieAccept">Accept</button>' +
             '</div>';
         document.body.appendChild(banner);
 
-        // Small delay so the slide-up transition is visible
         setTimeout(function () { banner.classList.add('show'); }, 600);
 
         function dismiss(choice) {
-            localStorage.setItem(STORAGE_KEY, choice);
+            localStorage.setItem(CONFIG.COOKIE_CONSENT_KEY, choice);
             banner.classList.remove('show');
             setTimeout(function () { banner.remove(); }, 400);
         }
 
-        document.getElementById('cookieAccept').addEventListener('click', function () { dismiss('accepted'); });
-        document.getElementById('cookieDecline').addEventListener('click', function () { dismiss('declined'); });
+        var acceptBtn = document.getElementById('cookieAccept');
+        var declineBtn = document.getElementById('cookieDecline');
+        if (acceptBtn) { acceptBtn.addEventListener('click', function () { dismiss('accepted'); }); }
+        if (declineBtn) { declineBtn.addEventListener('click', function () { dismiss('declined'); }); }
     }
 
     /* ── Newsletter Form ───────────────────────── */
@@ -86,26 +152,24 @@
         var form = document.getElementById('newsletterForm');
         if (!form) return;
 
+        var successEl = document.getElementById('newsletterSuccess');
+
+        // If already subscribed, hide form
+        if (localStorage.getItem(CONFIG.NEWSLETTER_KEY)) {
+            form.style.display = 'none';
+            if (successEl) { successEl.style.display = 'block'; }
+            return;
+        }
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             var email = form.querySelector('input[type="email"]').value.trim();
-            if (!email) return;
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
 
-            // Simulate submission (replace with real API call when ready)
-            var successEl = document.getElementById('newsletterSuccess');
             form.style.display = 'none';
-            if (successEl) successEl.style.display = 'block';
-
-            // Store locally so the form stays hidden on revisit (optional)
-            localStorage.setItem('alo_newsletter', email);
+            if (successEl) { successEl.style.display = 'block'; }
+            localStorage.setItem(CONFIG.NEWSLETTER_KEY, email);
         });
-
-        // If already subscribed, hide the form
-        if (localStorage.getItem('alo_newsletter')) {
-            var successEl = document.getElementById('newsletterSuccess');
-            form.style.display = 'none';
-            if (successEl) successEl.style.display = 'block';
-        }
     }
 
     /* ── Contact Form Feedback ─────────────────── */
@@ -113,13 +177,12 @@
         var form = document.querySelector('.contact-form form');
         if (!form) return;
 
-        // Inject success state
         var successDiv = document.createElement('div');
         successDiv.className = 'form-success';
         successDiv.innerHTML =
             '<div class="form-success-icon"><i class="fas fa-check"></i></div>' +
             '<h3>Message Sent!</h3>' +
-            '<p>Thank you for reaching out. We\'ll get back to you within 1–2 business days.</p>';
+            '<p>Thank you for reaching out. We\'ll get back to you within 1\u20132 business days.</p>';
         form.parentNode.insertBefore(successDiv, form.nextSibling);
 
         form.addEventListener('submit', function (e) {
@@ -129,20 +192,32 @@
         });
     }
 
-    /* ── Active Nav Link (current page) ───────── */
+    /* ── Active Nav Link ───────────────────────── */
     function initActiveNav() {
         var page = window.location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('nav a').forEach(function (link) {
             var href = link.getAttribute('href');
-            // Match shop page and info page exactly; don't re-mark anchor links
             if (href === page || href === page + '#home') {
                 link.classList.add('active');
             }
         });
     }
 
-    /* ── Init all ──────────────────────────────── */
+    /* ── Lazy Load Images ──────────────────────── */
+    function initLazyImages() {
+        if ('loading' in HTMLImageElement.prototype) {
+            document.querySelectorAll('img:not([loading])').forEach(function (img) {
+                img.setAttribute('loading', 'lazy');
+            });
+        }
+    }
+
+    /* ── Init All ──────────────────────────────── */
     document.addEventListener('DOMContentLoaded', function () {
+        initVisitCounter();
+        initMobileMenu();
+        initStickyHeader();
+        initSmoothScroll();
         initReveal();
         initScrollTop();
         initWhatsApp();
@@ -150,6 +225,6 @@
         initNewsletter();
         initContactForm();
         initActiveNav();
+        initLazyImages();
     });
-
 })();

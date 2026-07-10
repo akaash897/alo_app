@@ -29,11 +29,6 @@
             animation: flicker 2.5s ease-in-out infinite;
         }
 
-        @keyframes flicker {
-            0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
-            50%       { transform: scale(1.06) rotate(2deg); opacity: 1; }
-        }
-
         .nf-code {
             font-size: 5rem;
             font-weight: 200;
@@ -46,7 +41,7 @@
         .not-found h1 {
             font-size: 1.6rem;
             font-weight: 300;
-            color: #232323;
+            color: var(--secondary, #232323);
             margin-bottom: 12px;
         }
 
@@ -76,28 +71,32 @@
         }
 
         .nf-primary {
-            background: #232323;
-            color: #f8f5f2;
+            background: var(--secondary, #232323);
+            color: var(--primary, #f8f5f2);
         }
 
-        .nf-primary:hover { background: #e8c8a9; color: #232323; }
+        .nf-primary:hover { background: var(--accent, #e8c8a9); color: var(--secondary, #232323); }
 
         .nf-secondary {
             border: 1px solid #d0c4b8;
             color: #555;
         }
 
-        .nf-secondary:hover { border-color: #232323; color: #232323; }
+        .nf-secondary:hover { border-color: var(--secondary, #232323); color: var(--secondary, #232323); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .nf-flame { animation: none; }
+        }
     </style>
 </head>
 <body>
-
+    <a href="#notFoundMain" class="skip-link">Skip to main content</a>
     <!-- Header -->
     <header>
         <div class="logo">
             <img src="images/logo.jpg" alt="ALo Logo" class="logo-image">
         </div>
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
@@ -106,14 +105,14 @@
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="mobile-menu">
+        <div class="mobile-menu" aria-label="Toggle navigation menu" role="button" tabindex="0">
             <div class="line1"></div>
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
     </header>
 
-    <div class="not-found">
+    <div class="not-found" id="notFoundMain">
         <div class="nf-flame">&#x1F56F;</div>
         <div class="nf-code">404</div>
         <h1>This page has gone dark</h1>
@@ -125,18 +124,6 @@
         </div>
     </div>
 
-    <script>
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navUl = document.querySelector('nav ul');
-        if (mobileMenu && navUl) {
-            mobileMenu.addEventListener('click', () => {
-                navUl.classList.toggle('active');
-                mobileMenu.classList.toggle('toggle');
-            });
-        }
-        window.addEventListener('scroll', () => {
-            document.querySelector('header').classList.toggle('scrolled', window.scrollY > 50);
-        });
-    </script>
+    <script src="common.js"></script>
 </body>
 </html>

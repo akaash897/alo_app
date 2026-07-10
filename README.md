@@ -56,11 +56,22 @@ Whether you're a front-end developer, designer, or small business owner, this te
 
 ## 📂 Folder Structure
 
-ALo-Candles/
-├── index.html
-├── style.css
-├── images
-
+```
+alo_app/
+├── index.html          # Home page (hero, about, testimonials, contact)
+├── products.html       # Shop / product catalog with filters
+├── info.html           # Shipping info, FAQs, privacy policy, terms
+├── 404.html            # Custom 404 page
+├── style.css           # Global styles
+├── common.css          # Shared header/footer styles
+├── common.js           # Shared JavaScript (navigation, modals, carousels)
+├── products.css        # Product page-specific styles
+├── info.css            # Info page-specific styles
+├── data/
+│   └── products.json   # Product catalog data (prices, descriptions, images)
+├── images/             # Image assets (logos, product photos, backgrounds)
+└── README.md
+```
 
 ---
 
@@ -69,20 +80,21 @@ ALo-Candles/
 1. Clone this repository:
    ```bash
    git clone https://github.com/akaash897/alo_app
-2. Open index.html in your browser.
-
+   ```
+2. Open `index.html` in your browser (no build tools required).
 3. Customize content, images, and styles as needed.
-
 4. Deploy using GitHub Pages, Netlify, Vercel, or your preferred platform.
 
 ---
 
 ## Contact
-Created by Akaash Chatterjee (akaash897@gmail.com) — feel free to reach out!
+
+Created by Akaash Chatterjee ([akaash897@gmail.com](mailto:akaash897@gmail.com)) — feel free to reach out!
 
 ---
 
 ## 📝 License
+
 This project is licensed under the MIT License.
 
 
